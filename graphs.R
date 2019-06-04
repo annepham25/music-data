@@ -3,5 +3,14 @@ library(ggplot2)
 
 raw_dataset <- read.csv("data/featuresdf.csv", stringsAsFactors = FALSE)
 
-ggplot(raw_dataset)+
-  geom_bar(mapping = aes(x = name, y = danceability), stat = "identity")
+# ggplot(raw_dataset)+
+#   geom_bar(mapping = aes(x = name, y = danceability), stat = "identity")
+
+plot <- ggplot(raw_dataset, aes(x = tempo, y = danceability)) +
+         geom_point() +
+          geom_smooth(method = lm)
+
+
+  
+
+
