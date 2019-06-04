@@ -1,0 +1,6 @@
+
+library(dplyr)
+
+raw_dataset <- read.csv("age_dataset.csv", stringsAsFactors = FALSE)
+
+new_dataset <- raw_dataset %>% filter(hisp.id == "totpop", GEO.display.label != "United States") %>% select(-hisp.id, -hisp.display.label, -year.id, -GEO.id, -GEO.id2)
