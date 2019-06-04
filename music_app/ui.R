@@ -35,7 +35,7 @@ ui <- navbarPage(
                     choices = list("Energy" = 1, "Speechiness" = 2, "Acousticnes" = 3, "Tempo" = 4,
                                    "Loudness" = 5, "Instrumentalness" = 6, "Danceability" = 7, "Liveness" = 8),
                     selected = 4),
-        sliderInput("slider1", label = "Top songs", min = 0, 
+        sliderInput("slider", label = "Best songs to dance to", min = 0, 
                     max = 20, value = 5)
    
       ),

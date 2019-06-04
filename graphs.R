@@ -1,6 +1,6 @@
 library(dplyr)
 library(ggplot2)
-
+library(DT)
 raw_dataset <- read.csv("data/featuresdf.csv", stringsAsFactors = FALSE)
 
 # ggplot(raw_dataset)+
@@ -9,6 +9,12 @@ raw_dataset <- read.csv("data/featuresdf.csv", stringsAsFactors = FALSE)
 plot <- ggplot(raw_dataset, aes(x = tempo, y = danceability)) +
          geom_point() +
           geom_smooth(method = lm)
+
+
+
+table <- raw_dataset %>%  select(artists, name, danceability) %>%  arrange(desc(danceability)) %>% top_n(3)
+datatable(table, rownames = FALSE)
+
 
 
   

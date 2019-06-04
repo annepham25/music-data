@@ -8,13 +8,20 @@
 #
 
 library(shiny)
+library(dplyr)
+library(DT)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
   
   output$plot <- renderPlot({})
-  output$table <-  DT::renderDataTable({})
+  output$table <-  DT::renderDataTable({
+    table <- raw_dataset %>%  select(artists, name, danceability) %>% 
+      arrange(desc(danceability))  %>% top_n(input$slider)
+    datatable(table, rownames = FALSE)
+    
+  })
    
   
   
