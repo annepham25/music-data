@@ -17,8 +17,12 @@ ui <- navbarPage(
     )
   ),
   tabPanel("Bar chart",
+           titlePanel("Music Features Impact on Top 9 Song's Popularity"),
            sidebarLayout(
-             sidebarPanel(),
+             sidebarPanel(
+               radioButtons("factor", "Please pick a music feature:", 
+                  choices = c("danceability", "duration_ms", "time_signature", "tempo", "acousticness"))
+             ),
              mainPanel(
                tabPanel("bar", plotOutput("bar"))
              )

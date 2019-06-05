@@ -29,7 +29,15 @@ shinyServer(function(input, output) {
     datatable(table, rownames = FALSE)
   })
   
+  top_five <- head(raw_dataset, 9)
+  top_five$name <- factor(top_five$name, levels = top_five$name)
+  
   output$bar <- renderPlot({
+    top_five %>%
+      ggplot(aes_string(x="name", y=input$factor, fill="name")) +
+      geom_bar(stat='identity') +
+      theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5)) +
+      scale_fill_hue(l=92)
     
   })
   
