@@ -15,36 +15,17 @@ library(ggplot2)
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
-  # to read the music data
-  readData <- reactive({
-    data <- read.csv("data/featuresdf.csv")
-    data
-  })
+  raw_dataset <- read.csv("data/featuresdf.csv", stringsAsFactors = FALSE)
   
   output$plot <- renderPlot({
-    music_data <- readData()
-    
-    select <- input$select
-    select2 <- input$select2
-
-    counts <- as.data.frame(table(music_data[select]))
-    names(counts)[1] = "Type"
-
-    counts2 <- as.data.frame(table(music_data[select2]))
-    names(counts)[1] = "Type2"
-
-    ggplot(counts, aes(x = Type, y = Type2)) +
-      geom_bar(stat = "identity") +
-      labs(title = paste0("Number of reported UFOs sorted by ", input$select, " in the ", input$select2),x = select ,y = select2)
+    ggplot(raw_dataset, aes_string(x = input$select1 , y = input$select2)) +
+      geom_point() +
+      geom_smooth(method = lm)
   })
   
   output$table <-  DT::renderDataTable({
     table <- raw_dataset %>%  select(artists, name, danceability) %>% 
       arrange(desc(danceability))  %>% top_n(input$slider)
     datatable(table, rownames = FALSE)
-    
   })
-   
-  
-  
 })
