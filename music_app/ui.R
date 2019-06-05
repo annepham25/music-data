@@ -1,22 +1,15 @@
 library(shiny)
 
 ui <- navbarPage(
+  theme = "style.css",
   "Music Popularity",
   tabPanel(
     "Overview",
-    sidebarLayout(
-      sidebarPanel(
-        p(""),
-        p(""),
-        textOutput("summaryText")
-        
-        ),
-      mainPanel(
-        plotOutput("")
-      )
-    )
+    img(src = "image.jpeg")
+    
+    
   ),
-  tabPanel("Bar chart",
+  tabPanel("Bar Chart",
            titlePanel("Music Features Impact on Top 9 Song's Popularity"),
            sidebarLayout(
              sidebarPanel(
@@ -32,6 +25,7 @@ ui <- navbarPage(
   
   
   tabPanel("Plot",
+           titlePanel("Correlation between 2 features"), 
            sidebarLayout(
              sidebarPanel(
                selectInput("select1", label =("choose first variable"), 
@@ -47,8 +41,8 @@ ui <- navbarPage(
            )
   ),
   
-  tabPanel(
-    "Song mood analysis",
+  tabPanel("Pie Chart",
+    titlePanel("Song mood analysis"),
     sidebarLayout(
       sidebarPanel(
         sliderInput("num", label = h3("number of input songs"), min = 5,
@@ -62,14 +56,12 @@ ui <- navbarPage(
   
   tabPanel(
     "Table",
-    sidebarLayout(
-      sidebarPanel(
-        sliderInput("slider", label = "Best songs to dance to", min = 0, 
-                    max = 20, value = 5)
-      ),
-      mainPanel(
-          tabPanel("Table",  DT::dataTableOutput("table"))
-      )
+    verticalLayout(
+      titlePanel("Best songs to dance to"),
+      sliderInput("slider", label = "Choose your top songs", min = 0, 
+                  max = 20, value = 5),
+      
+      DT::dataTableOutput("table")
     )
   )
   
