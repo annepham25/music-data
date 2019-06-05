@@ -1,11 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 
+h2{
+  color: #ca9fce;
+  font-size: 30px;
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+h4{
+  color: #ca9fce;
+  font-family: 'Lobster', cursive;
+  text-align: justify;
+}
 body{
+  color: #3e2b3f;
   font-family: 'Raleway', sans-serif;
+  margin-left: 50px;
+  margin-right: 50px;
+  text-align: justify;
 }
 
 img{
-  width: 50%;
+  width: 100%;
   text-align: center;
 
 }
