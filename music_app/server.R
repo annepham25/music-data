@@ -28,4 +28,16 @@ shinyServer(function(input, output) {
       arrange(desc(danceability))  %>% top_n(input$slider)
     datatable(table, rownames = FALSE)
   })
+  
+  output$bar <- renderPlot({
+    
+  })
+  
+  output$pie <- renderPlot({
+    
+  })
+  
+  
+  
+  
 })
