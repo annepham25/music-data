@@ -4,12 +4,12 @@
 #### This is an interactive visual display of music data pulled from [Kaggle.com!](https://www.kaggle.com/nadintamer/top-tracks-of-2017?fbclid=IwAR0JMLruUXRQSuFSFHP95vAEg8XoAakttjmohRvMV43EZzuoDEYwjucOtto)
 #### When you open to the app you have a couple of options and you can select which graph you want to look at by clicking through the tabs at the top of the app!
 
- * How do the most popular songs show popularity? 
+ * How do the most popular songs show popularity?
     + The first bar chart will allow you to visualize the top 9 most popular songs, and filter through different factors that will allow the user to visualize how the most popular songs exemplify certain characteristics such as Danceability, Tempo, Acousticness, and more!
  * How do all the songs in the dataset exemplify certain characteristics?
     + The second plot will allow the user to choose different song characteristics and plot them against each other to visualize a distribution.
  * Are certain artists more popular than others?
-    + The third pie chart allows you to visualize in a pie chart an input amount of the users choice anywhere from 0-100 songs, and will display a fraction of those songs by mood
+    + The third pie chart allows you to visualize in a pie chart an input amount of the users choice anywhere from 0-100 songs, and will display fraction(s) of those songs by mood
  * What songs can I dance to?
     + The final table allows the user to select how many songs they want to display and then showing that number of the top songs by danceability!
 
