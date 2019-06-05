@@ -45,20 +45,20 @@ ui <- navbarPage(
                tabPanel("Plot", plotOutput("plot"))
              )
            )
-      
-           ),
+  ),
   
-  tabPanel("Pie",
-           sidebarLayout(
-             sidebarPanel(),
-             mainPanel(
-               tabPanel("Pie", plotOutput("pie"))
-             )
-           )),
-  
-  
-  
-  
+  tabPanel(
+    "Song mood analysis",
+    sidebarLayout(
+      sidebarPanel(
+        sliderInput("num", label = h3("number of input songs"), min = 5,
+                    max = 100, value = 50)
+      ),
+      mainPanel(
+        tabPanel("pie", plotOutput("pie"))
+      )
+    )
+  ),
   
   tabPanel(
     "Table",
