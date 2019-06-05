@@ -5,7 +5,7 @@
 #### When you open to the app you have a couple of options and you can select which graph you want to look at by clicking through the tabs at the top of the app!
 
  * How do the most popular songs show popularity? 
-    + The first bar chart will allow you to visualize the top 9 most popular songs, and filter through different factors that will allow the user to visualize how the most popular songs exemplify certain characteristics such as Danceability, Tempo, Valence, Acousticness, and more!
+    + The first bar chart will allow you to visualize the top 9 most popular songs, and filter through different factors that will allow the user to visualize how the most popular songs exemplify certain characteristics such as Danceability, Tempo, Acousticness, and more!
  * How do all the songs in the dataset exemplify certain characteristics?
     + The second plot will allow the user to choose different song characteristics and plot them against each other to visualize a distribution.
  * Are certain artists more popular than others?
