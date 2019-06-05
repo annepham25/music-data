@@ -9,7 +9,7 @@
  * How do all the songs in the dataset exemplify certain characteristics?
     + The second plot will allow the user to choose different song characteristics and plot them against each other to visualize a distribution.
  * Are certain artists more popular than others?
-    + The third pie chart allows you to visualize in a pie chart the amount of times an artists name appears in the top 100 songs!
+    + The third pie chart allows you to visualize in a pie chart an input amount of the users choice anywhere from 0-100 songs, and will display a fraction of those songs by mood
  * What songs can I dance to?
     + The final table allows the user to select how many songs they want to display and then showing that number of the top songs by danceability!
 
