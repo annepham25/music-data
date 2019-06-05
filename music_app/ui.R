@@ -31,7 +31,13 @@ ui <- navbarPage(
                   choices = c("danceability", "duration_ms", "time_signature", "tempo", "acousticness"))
              ),
              mainPanel(
-               tabPanel("bar", plotOutput("bar"))
+               tabPanel("bar", plotOutput("bar")),
+               HTML(
+                 paste(
+                   p("The bar chart above represents the top 9 songs out of 100 in 2017 of the Spotify dataset. It allows the user to choose which feature they are interested in seeing how it plays a role in a song’s popularity."),
+                  p("Some interesting results we observed was that the time signature of a song doesn’t really have an impact on how popular a song is. We noticed this because for the top 9 songs, the time signature of all of them were the exact same. When the acousticness feature is picked, it is interesting to see that the top song, “Shape of You”, has a very high acousticness level, but the other songs don’t really have nearly as high of a result. It’s cool to see that one song was able to thrive on acousticness, while the others didn’t need it to become popular. The other features in general have relatively similar results which it’s cool to see the similarities across the top 9 popular songs")
+                   )
+               )
              )
              )
            ),
@@ -50,7 +56,15 @@ ui <- navbarPage(
                                        "loudness", "instrumentalness", "danceability", "liveness"))
              ),
              mainPanel(
-               tabPanel("Plot", plotOutput("plot"))
+               tabPanel("Plot", plotOutput("plot")),
+               HTML(
+                 paste(
+                   p("This plot outputs the correlation between 2 features.
+                      The user has the ability to choose whichever feature he wants to see.
+                     According to the outputs, we noticed some interesting results, such as danceability and energy are negatively correlated which means if one of them increases, the other decrease.
+                     Another interesting result was  the graph of danceability vs energy showed no correlation which is surprising as we always associate dance with intense activity(energy).")
+                 )
+               )
              )
            )
   ),
@@ -63,7 +77,16 @@ ui <- navbarPage(
                     max = 100, value = 50)
       ),
       mainPanel(
-        tabPanel("pie", plotOutput("pie"))
+        tabPanel("pie", plotOutput("pie"),
+        HTML(
+          paste(
+            p(
+              "One of the function in our final project is song mood analysis. The mood is based on professionally calculated valence value for each song in our database. The valence values are ranging from 0 to 1. The larger the value the happier the song. I classified songs in to difference mood based on the valence value they have: very sad songs(0-0.2), sad songs(0.2-0.4),neutral songs(0.4-0.6), happy songs(0.6-0, very happy songs(0.8-1). The question answered for this section is that for top 100 songs in 2017, how many percentage of the songs account for each mood. The user can adjust how many input songs to be considered in this analysis. With the help of shiny widget, user can scroll the side bar and select number of songs from 5 - 100 with ease. The data is visualized by a pie chart to show the percentage of each mood that take place in the number of songs selected."
+            )
+          )
+        )
+        )
+        
       )
     )
   ),
@@ -76,7 +99,13 @@ ui <- navbarPage(
                   max = 20, value = 5),
       
       DT::dataTableOutput("table")
+    ),
+    HTML(
+      paste(
+        p("This table will let you output the number of songs you choose ordered by their danceability.
+          The minimum song you can choose is 0 and the maximum is 20.
+          Thanks to this table, you can also search for your favorite song in 2017 and see if it made the list of the top songs you can dance to.")
+      )
     )
   )
-  
 )
