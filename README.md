@@ -1,7 +1,7 @@
 # Music Data
-
+## Click [HERE](https://marwa10.shinyapps.io/music_app/) to access the app!
 ### How the app works:
-#### *This is an interactive visual display of music data pulled from Kaggle.com!*
+#### This is an interactive visual display of music data pulled from [Kaggle.com!](https://www.kaggle.com/nadintamer/top-tracks-of-2017?fbclid=IwAR0JMLruUXRQSuFSFHP95vAEg8XoAakttjmohRvMV43EZzuoDEYwjucOtto)
 #### When you open to the app you have a couple of options and you can select which graph you want to look at by clicking through the tabs at the top of the app!
 
  * How do the most popular songs show popularity?
