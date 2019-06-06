@@ -55,7 +55,7 @@ shinyServer(function(input, output) {
     happy <- nrow(raw_dataset %>% filter( valence > 0.6, valence <= 0.8))
     veryHappy <- nrow(raw_dataset %>% filter(valence > 0.8))
     mood <- c(verySad, sad, neutral, happy, veryHappy)
-    moodName <- c("very sad songs", "sad songs", "nutrual songs", "happy songs", "very happy songs")
+    moodName <- c("very sad songs", "sad songs", "neutral songs", "happy songs", "very happy songs")
     cols <- c("black","#0099FF","#99FF99","#FFFF66","#FF3399")
     percentlabels<- round(100*mood/sum(mood), 1)
     pielabels<- paste(percentlabels, "%", sep="")
